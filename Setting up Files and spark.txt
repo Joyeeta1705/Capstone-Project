@@ -1,0 +1,23 @@
+Connect to Hadoop to get the file :
+1. ssh fai10094@172.16.0.119
+2. 643%#$89
+3. hadoop fs -ls /
+4. hadoop fs -ls /user/insofe/retail/data/aws
+5. exit
+6.scp fai10094@172.16.0.119:/home/fai10094/Data_sets/*.csv .
+
+Connect to pyspark:
+1. ssh fai10094@172.16.0.119
+2. 643%#$93
+3. pyspark
+
+ JYPUTER
+1.!pip install -q findspark
+2. import os
+   os.environ["SPARK_HOME"] = "/usr/share/spark-3.1.1-bin-hadoop3.2"
+3. import findspark
+   findspark.init()
+4. import pyspark
+5. from pyspark.sql.types import *
+6. from pyspark.sql import SparkSession
+7. spark = SparkSession.builder.master("local[2]").appName("RDDProgram").getOrCreate()
